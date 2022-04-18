@@ -34,7 +34,7 @@ def start(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Resmi Kanal 📣', url='https://t.me/emilyutagresmi'),
+                    InlineKeyboardButton('Resmi Kanal 📣', url='https://t.me/RulingClassChannel'),
                   ],[
                     InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.PLAYLIST_NAME}')
                 ]
@@ -52,7 +52,7 @@ def help(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Resmi Kanal 📣', url='https://t.me/emilyutagresmi'),
+                    InlineKeyboardButton('Resmi Kanal 📣', url='https://t.me/RulingClassChannel'),
                   ],[
                     InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.PLAYLIST_NAME}')
                 ]
@@ -92,7 +92,7 @@ def bul(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**🎶 İndirildi. İyi Dinlemeler [𝑆𝑒𝑛𝑖𝑛 𝑆̧𝑎𝑟𝑘𝑖𝑛](https://t.me/seninsarkinn) 🎶.**"
+        rep = f"**🎶 İndirildi. İyi Dinlemeler [𝑆𝑒𝑛𝑖𝑛 𝑆̧𝑎𝑟𝑘𝑖𝑛](https://t.me/Onlineemusicplaylistt) 🎶.**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
@@ -100,7 +100,7 @@ def bul(_, message):
         m.edit("📤 Yükleniyor..")
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@emilyutagresmi")
         m.delete()
-        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@Seninsarkin_bot", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
+        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@Onlineemusicbot", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
     except Exception as e:
         m.edit("<b>❌ Hatanın, düzelmesini bekleyiniz.</b>")
         print(e)
