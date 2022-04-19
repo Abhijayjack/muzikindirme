@@ -46,7 +46,7 @@ def start(client, message):
 
 @bot.on_message(filters.command(['help']))
 def help(client, message):
-    helptext = f'**Müzik indirmek için /bul komutunu kullabilirsin ⤵️**\n\n**Örnek:**\n**1.** `/bul gece mavisi`\n**2.** `/bul https://youtu.be/qLXUa89Q5WI`\n\n**İndirdiğin müzikler [𝑆𝑒𝑛𝑖𝑛 𝑆̧𝑎𝑟𝑘𝑖𝑛](https://t.me/seninsarkinn) kanalında paylaşılacaktır.**'
+    helptext = f'**Müzik indirmek için /bul komutunu kullabilirsin ⤵️**\n\n**Örnek:**\n**1.** `/indir gece mavisi`\n**2.** `/indir https://youtu.be/qLXUa89Q5WI`\n\n**İndirdiğin müzikler [𝑆𝑒𝑛𝑖𝑛 𝑆̧𝑎𝑟𝑘𝑖𝑛](https://t.me/RulingClassPlaylist) kanalında paylaşılacaktır.**'
     message.reply_text(
         text=helptext, 
         quote=False,
@@ -67,7 +67,7 @@ async def live(client: Client, message: Message):
     
 #musiqi əmri#
 
-@bot.on_message(filters.command("bul") & ~filters.edited)
+@bot.on_message(filters.command("indir") ("!indir") (".indir") & ~filters.edited)
 def bul(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("<b>Şarkınız Aranıyor ... 🔍</b>")
